@@ -404,22 +404,14 @@
     </div>
 </div>
 
-<script>
-    
+<script>   
     function loadVideo(element) {
-    var video = element.querySelector('video');
-    var source = video.querySelector('source');
-    var dataSrc = source.getAttribute('data-src');
-    var fileExtension = dataSrc.split('.').pop(); // 获取文件扩展名
-    var src = fileExtension.toLowerCase() === 'mp4' ? dataSrc.toUpperCase() : dataSrc.toLowerCase(); // 检查并调整大小写
-    source.src = src;
-    video.load();
-    element.querySelector('.video-overlay').style.display = 'none';
-}
-
-
-   
-
+        var video = element.querySelector('video');
+        var source = video.querySelector('source');
+        source.src = source.getAttribute('data-src');
+        video.load();
+        element.querySelector('.video-overlay').style.display = 'none';
+    }
 </script>
 
 </body>
